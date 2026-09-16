@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    environment:
+      TARGET: http://web
+    depends_on:
+      - web
+
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
